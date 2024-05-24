@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-05-24T23:21:14.356676" rpa="false" schemaversion="5">
+<suite id="s1" name="TestCase01" source="C:\Ranjith\Learnings\Projects\RobotProject\TestScenarios\TestCase01.robot">
+<test id="s1-t1" name="Enter details in the Tools QA Form" line="19">
+<kw name="Navigate to the URL" owner="DemoQaActionsPage">
+<kw name="Create Webdriver" owner="SelLib2">
+<msg time="2024-05-24T23:21:15.158149" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2024-05-24T23:21:15.157123" elapsed="6.839359"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SelLib2">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-24T23:21:21.996482" elapsed="0.055287"/>
+</kw>
+<kw name="Go To" owner="SelLib2">
+<msg time="2024-05-24T23:21:22.052774" level="INFO">Opening url 'https://demoqa.com/automation-practice-form'</msg>
+<arg>${DEMOQA_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-05-24T23:21:22.051769" elapsed="187.119830"/>
+</kw>
+<status status="PASS" start="2024-05-24T23:21:15.157123" elapsed="194.014476"/>
+</kw>
+<kw name="Fill the Student Registration Form" owner="DemoQaActionsPage">
+<kw name="Get Data Frame" owner="CommonLibraries">
+<msg time="2024-05-24T23:24:29.177287" level="INFO">C:\Ranjith\Learnings\Projects\RobotProject\TestScenarios/../Resources/DemoQAFormData.xlsx</msg>
+<msg time="2024-05-24T23:24:29.665396" level="INFO">${file_content} =       FIRST_NAME    LAST_NAME GENDER   MOBILENUM        DOB        SUBJECTS        HOBBIES            ADDRESS      STATE     CITY
+0  Ranjith Kumar  Subramaniam   Male  9884886760 1985-07-01  TAMIL, EN...</msg>
+<var>${file_content}</var>
+<arg>${file_path}</arg>
+<status status="PASS" start="2024-05-24T23:24:29.176589" elapsed="0.488807"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${file_content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-24T23:24:29.665396" elapsed="0.007012"/>
+</kw>
+<arg>${file_path}</arg>
+<status status="PASS" start="2024-05-24T23:24:29.175289" elapsed="0.498120"/>
+</kw>
+<status status="PASS" start="2024-05-24T23:21:15.156122" elapsed="194.517287"/>
+</test>
+<doc>To proatice the selenium with the form in the URL "https://demoqa.com/automation-practice-form"</doc>
+<status status="PASS" start="2024-05-24T23:21:14.359678" elapsed="195.314728"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestCase01">TestCase01</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
