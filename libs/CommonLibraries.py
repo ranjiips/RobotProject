@@ -3,10 +3,14 @@ from venv import logger
 
 import urllib3
 import pandas as pd
-from robot.api.deco import keyword
+from robot.api.deco import keyword, library
+from robot.libraries.BuiltIn import BuiltIn
 
-
+@library
 class CommonLibraries():
+
+    def __init__(self):
+        self.selLib = BuiltIn().get_library_instance("SelLib2")
 
     @keyword('Get Data Frame')
     def get_data_frame(self, file_name):
@@ -20,4 +24,30 @@ class CommonLibraries():
         else:
             return "please pass valid files like .csv/.xlsx"
 
+    @keyword("Get Column values from Data frames")
+    def get_column_values_df(self, object):
+        return list(object.columns)
+
+    @keyword("Get Row Count in Data Frames")
+    def get_row_count_df(self, object):
+        return len(object)
+
+    @keyword("Fill the Student Registration Form")
+    def fill_the_registration_form(self, file_path):
+        # locator = BuiltIn().get_variable_value("${FIRST_NAME_LOCATOR}")
+        # print(locator)
+        form_labels = self.selLib.get_webelements(" css:.form-label")
+        for label in form_labels:
+            print(label.text)
+        # self.selLib.input_text(self, " css:input#firstName'] ", "sample text")
+        file_content=self.get_data_frame(file_path)
+        print(file_content)
+        print(file_content['FIRST_NAME'])
+        headers=self.get_column_values_df(file_content)
+        print(headers)
+        row_count=self.get_row_count_df(file_content)
+        print(row_count)
+
+        for index, row in file_content.iterrows():
+            print(row['FIRST_NAME'], row['LAST_NAME'], row['HOBBIES'])
 

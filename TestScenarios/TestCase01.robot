@@ -2,12 +2,7 @@
 *** Settings ***
 Documentation   To proatice the selenium with the form in the URL "https://demoqa.com/automation-practice-form"
 
-#Library     SeleniumLibrary  WITH NAME  SelLib
-Library     Selenium2Library  WITH NAME  SelLib2
-Library     ../libs/CommonLibraries.py
-#Resource    ../Locators/DemoQaLocatorsPage.robot
-Resource    ../Actions/DemoQaActionsPage.robot
-
+Resource    ../Initialize.robot
 
 
 *** Variables ***
@@ -16,6 +11,12 @@ ${file_path}    ${CURDIR}/../Resources/DemoQAFormData.xlsx
 
 
 *** Test Cases ***
+Load the Tools QA Site
+    Navigate to the URL
+
+Fetch the Data from Input Files
+    Get the DataFrame Contents       ${file_path}
+
 Enter details in the Tools QA Form
     Navigate to the URL
     Fill the Student Registration Form      ${file_path}
