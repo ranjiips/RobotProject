@@ -1,0 +1,6 @@
+{
+    "name":"BOOK_NAME",
+    "isbn":"ISBN_VALUE",
+    "aisle":"AISLE_VALUE",
+    "author":"AUTHOR_NAME"
+}

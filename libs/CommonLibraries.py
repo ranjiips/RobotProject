@@ -4,13 +4,13 @@ from venv import logger
 import urllib3
 import pandas as pd
 from robot.api.deco import keyword, library
-from robot.libraries.BuiltIn import BuiltIn
+# from robot.libraries.BuiltIn import BuiltIn
 
 @library
 class CommonLibraries():
 
-    def __init__(self):
-        self.selLib = BuiltIn().get_library_instance("SelLib2")
+    # def __init__(self):
+    #     self.selLib = BuiltIn().get_library_instance("SelLib2")
 
     @keyword('Get Data Frame')
     def get_data_frame(self, file_name):
@@ -36,9 +36,9 @@ class CommonLibraries():
     def fill_the_registration_form(self, file_path):
         # locator = BuiltIn().get_variable_value("${FIRST_NAME_LOCATOR}")
         # print(locator)
-        form_labels = self.selLib.get_webelements(" css:.form-label")
-        for label in form_labels:
-            print(label.text)
+        # form_labels = self.selLib.get_webelements(" css:.form-label")
+        # for label in form_labels:
+        #     print(label.text)
         # self.selLib.input_text(self, " css:input#firstName'] ", "sample text")
         file_content=self.get_data_frame(file_path)
         print(file_content)

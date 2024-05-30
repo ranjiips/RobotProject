@@ -6,3 +6,5 @@ pip install Pandas3
 pip install openpyxl
 pip install robotframework-datadrivercd
 pip install robotframework-pabot
+pip install robotframework-requests
+pip install robotframework-httplibrary
