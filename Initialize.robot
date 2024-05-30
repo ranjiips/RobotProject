@@ -7,6 +7,11 @@ Library     RequestsLibrary
 Library     Collections
 Library     OperatingSystem
 Library     ./libs/CommonLibraries.py
+Library     ./libs/API_Methods.py
+
+
+
+
 #Resource    ./Locators/DemoQaLocatorsPage.robot
 Resource    ./Actions/DemoQaActionsPage.robot
 Resource    ./Actions/API_Page.robot

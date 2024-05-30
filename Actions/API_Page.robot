@@ -8,6 +8,7 @@ ${book_id_value}
 
 *** Keywords ***
 Add Book into Library DB
+    [Tags]   API
     ${request_body}     Get Payload To Add Book Details
     ${response}     POST    ${base_url}${add_book}  json=${request_body}    expected_status=200
     IF    "${response.json()}[Msg]"=="Book Already Exists"
@@ -22,11 +23,13 @@ Get Payload To Add Book Details
     RETURN      ${request_body}
 
 Get Book Details By ID
+    [Tags]   API
     ${get_response}     GET     ${base_url}${get_book_id}   params=ID=${book_id_value}    expected_status=200
     log   Get response: ${get_response.json()}    console=${True}
     log   Book Name: ${get_response.json()}[0][book_name]    console=${True}
 
 Delete the Book Details
+    [Tags]   API
     &{request_body}   Create Dictionary     ID=${book_id_value}
     ${response}     POST    ${base_url}${delete_book_id}  json=${request_body}    expected_status=200
     IF    "${response.json()}[msg]"=="book is successfully deleted"

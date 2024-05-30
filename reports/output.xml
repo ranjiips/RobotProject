@@ -1,194 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-05-30T22:53:07.827484" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-05-30T23:14:47.975763" rpa="false" schemaversion="5">
 <suite id="s1" name="TestCase01" source="C:\Ranjith\Learnings\Projects\RobotProject\TestScenarios\TestCase01.robot">
 <test id="s1-t1" name="Load the Tools QA Site" line="15">
 <kw name="Navigate to the URL" owner="DemoQaActionsPage">
-<kw name="Create Webdriver" owner="SelLib2">
-<msg time="2024-05-30T22:53:09.338418" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<kw name="Create Webdriver">
+<msg time="2024-05-30T23:14:49.739951" level="FAIL">No keyword with name 'Create Webdriver' found.</msg>
 <arg>Chrome</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2024-05-30T22:53:09.338418" elapsed="4.453523"/>
+<status status="FAIL" start="2024-05-30T23:14:49.739951" elapsed="0.000000">No keyword with name 'Create Webdriver' found.</status>
 </kw>
-<kw name="Maximize Browser Window" owner="SelLib2">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-05-30T22:53:13.792825" elapsed="0.077034"/>
+<kw name="Maximize Browser Window">
+<status status="NOT RUN" start="2024-05-30T23:14:49.742954" elapsed="0.000000"/>
 </kw>
-<kw name="Go To" owner="SelLib2">
-<msg time="2024-05-30T22:53:13.870829" level="INFO">Opening url 'https://demoqa.com/automation-practice-form'</msg>
+<kw name="Go To">
 <arg>${DEMOQA_URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-05-30T22:53:13.870829" elapsed="213.172021"/>
+<status status="NOT RUN" start="2024-05-30T23:14:49.744535" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-05-30T22:53:09.337345" elapsed="217.708547"/>
+<status status="FAIL" start="2024-05-30T23:14:49.737005" elapsed="0.007530">No keyword with name 'Create Webdriver' found.</status>
 </kw>
-<kw name="Close All Browsers" owner="SelLib2" type="TEARDOWN">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-05-30T22:56:47.098035" elapsed="15.571320"/>
+<kw name="close browser" type="TEARDOWN">
+<msg time="2024-05-30T23:14:49.751197" level="FAIL">No keyword with name 'close browser' found.</msg>
+<status status="FAIL" start="2024-05-30T23:14:49.750049" elapsed="0.001148">No keyword with name 'close browser' found.</status>
 </kw>
-<status status="PASS" start="2024-05-30T22:53:09.336651" elapsed="233.333703"/>
+<status status="FAIL" start="2024-05-30T23:14:49.734704" elapsed="0.016493">No keyword with name 'Create Webdriver' found.
+
+Also teardown failed:
+No keyword with name 'close browser' found.</status>
 </test>
 <test id="s1-t2" name="Fetch the Data from Input Files" line="18">
 <kw name="Get the DataFrame Contents" owner="DemoQaActionsPage">
 <kw name="Get Data Frame" owner="CommonLibraries">
-<msg time="2024-05-30T22:57:02.674384" level="INFO">C:\Ranjith\Learnings\Projects\RobotProject\TestScenarios/../Resources/DemoQAFormData.xlsx</msg>
-<msg time="2024-05-30T22:57:03.349272" level="INFO">${file_content} =       FIRST_NAME    LAST_NAME                EMAIL  GENDER  ...         HOBBIES            ADDRESS    STATE     CITY
-0  Ranjith Kumar  Subramaniam    ranjith@gmail.com    Male  ...   SPORTS, MUSIC  SA...</msg>
+<msg time="2024-05-30T23:14:49.757339" level="INFO">C:\Ranjith\Learnings\Projects\RobotProject\TestScenarios/../Resources/DemoQAFormData.xlsx</msg>
+<msg time="2024-05-30T23:14:49.771371" level="FAIL">ImportError: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.</msg>
 <var>${file_content}</var>
 <arg>${file_path}</arg>
-<status status="PASS" start="2024-05-30T22:57:02.672356" elapsed="0.676916"/>
+<status status="FAIL" start="2024-05-30T23:14:49.756967" elapsed="0.020716">ImportError: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-30T22:57:03.362269" level="INFO">      FIRST_NAME    LAST_NAME                EMAIL  GENDER  ...         HOBBIES            ADDRESS    STATE     CITY
-0  Ranjith Kumar  Subramaniam    ranjith@gmail.com    Male  ...   SPORTS, MUSIC  SAIDAPET, CHENNAI  Haryana  Panipat
-1       Karthick  Subramaniam   karthick@gmail.com    Male  ...          SPORTS    GUINDY, CHENNAI  Haryana  Panipat
-2        Saranya     Santhosh  saransant@gmail.com  Female  ...  READING, MUSIC           BANGLORE  Haryana  Panipat
-3      Parthiban     Sankaran  parthiban@gmail.com    Male  ...           MUSIC              SALEM  Haryana  Panipat
-4        Ashwini        Patel     ashpat@gmail.com  Female  ...          RADING            PANIPAT  Haryana  Panipat
-
-[5 rows x 11 columns]</msg>
 <arg>${file_content}</arg>
 <arg>console=${True}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-30T22:57:03.350224" elapsed="0.013096"/>
+<status status="NOT RUN" start="2024-05-30T23:14:49.778990" elapsed="0.000297"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-30T22:57:03.365329" level="INFO">0    Ranjith Kumar
-1         Karthick
-2          Saranya
-3        Parthiban
-4          Ashwini
-Name: FIRST_NAME, dtype: object</msg>
 <arg>${file_content['FIRST_NAME']}</arg>
 <arg>console=${True}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-30T22:57:03.363320" elapsed="0.002009"/>
+<status status="NOT RUN" start="2024-05-30T23:14:49.779685" elapsed="0.000000"/>
 </kw>
 <kw name="Get Column values from Data frames" owner="CommonLibraries">
-<msg time="2024-05-30T22:57:03.366331" level="INFO">${headers} = ['FIRST_NAME', 'LAST_NAME', 'EMAIL', 'GENDER', 'MOBILENUM', 'DOB', 'SUBJECTS', 'HOBBIES', 'ADDRESS', 'STATE', 'CITY']</msg>
 <var>${headers}</var>
 <arg>${file_content}</arg>
-<status status="PASS" start="2024-05-30T22:57:03.366331" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-05-30T23:14:49.779685" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-30T22:57:03.366331" level="INFO">['FIRST_NAME', 'LAST_NAME', 'EMAIL', 'GENDER', 'MOBILENUM', 'DOB', 'SUBJECTS', 'HOBBIES', 'ADDRESS', 'STATE', 'CITY']</msg>
 <arg>${headers}</arg>
 <arg>console=${True}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-30T22:57:03.366331" elapsed="0.001001"/>
+<status status="NOT RUN" start="2024-05-30T23:14:49.780582" elapsed="0.000105"/>
 </kw>
 <kw name="Get Row Count in Data Frames" owner="CommonLibraries">
-<msg time="2024-05-30T22:57:03.367417" level="INFO">${row_count} = 5</msg>
 <var>${row_count}</var>
 <arg>${file_content}</arg>
-<status status="PASS" start="2024-05-30T22:57:03.367417" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-05-30T23:14:49.780687" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-30T22:57:03.367417" level="INFO">5</msg>
 <arg>${row_count}</arg>
 <arg>console=${True}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-30T22:57:03.367417" elapsed="0.000916"/>
+<status status="NOT RUN" start="2024-05-30T23:14:49.780687" elapsed="0.000000"/>
 </kw>
 <arg>${file_path}</arg>
-<status status="PASS" start="2024-05-30T22:57:02.672356" elapsed="0.696139"/>
+<status status="FAIL" start="2024-05-30T23:14:49.756339" elapsed="0.024348">ImportError: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.</status>
 </kw>
-<kw name="Close All Browsers" owner="SelLib2" type="TEARDOWN">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-05-30T22:57:03.368495" elapsed="0.000000"/>
+<kw name="close browser" type="TEARDOWN">
+<msg time="2024-05-30T23:14:49.786721" level="FAIL">No keyword with name 'close browser' found.</msg>
+<status status="FAIL" start="2024-05-30T23:14:49.786721" elapsed="0.000000">No keyword with name 'close browser' found.</status>
 </kw>
-<status status="PASS" start="2024-05-30T22:57:02.671370" elapsed="0.697960"/>
+<status status="FAIL" start="2024-05-30T23:14:49.754076" elapsed="0.032645">ImportError: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.
+
+Also teardown failed:
+No keyword with name 'close browser' found.</status>
 </test>
 <test id="s1-t3" name="Enter details in the Tools QA Form" line="21">
 <kw name="Navigate to the URL" owner="DemoQaActionsPage">
-<kw name="Create Webdriver" owner="SelLib2">
-<msg time="2024-05-30T22:57:03.371331" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<kw name="Create Webdriver">
+<msg time="2024-05-30T23:14:49.790683" level="FAIL">No keyword with name 'Create Webdriver' found.</msg>
 <arg>Chrome</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2024-05-30T22:57:03.371331" elapsed="4.935296"/>
+<status status="FAIL" start="2024-05-30T23:14:49.790683" elapsed="0.000000">No keyword with name 'Create Webdriver' found.</status>
 </kw>
-<kw name="Maximize Browser Window" owner="SelLib2">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-05-30T22:57:08.307354" elapsed="0.069966"/>
+<kw name="Maximize Browser Window">
+<status status="NOT RUN" start="2024-05-30T23:14:49.792683" elapsed="0.000000"/>
 </kw>
-<kw name="Go To" owner="SelLib2">
-<msg time="2024-05-30T22:57:08.378417" level="INFO">Opening url 'https://demoqa.com/automation-practice-form'</msg>
+<kw name="Go To">
 <arg>${DEMOQA_URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-05-30T22:57:08.377320" elapsed="157.027238"/>
+<status status="NOT RUN" start="2024-05-30T23:14:49.793682" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-05-30T22:57:03.371331" elapsed="162.034441"/>
+<status status="FAIL" start="2024-05-30T23:14:49.787735" elapsed="0.005947">No keyword with name 'Create Webdriver' found.</status>
 </kw>
 <kw name="Fill the Student Registration Form" owner="CommonLibraries">
-<msg time="2024-05-30T22:59:45.406555" level="INFO">C:\Ranjith\Learnings\Projects\RobotProject\TestScenarios/../Resources/DemoQAFormData.xlsx</msg>
-<msg time="2024-05-30T22:59:45.440511" level="INFO">FIRST_NAME    LAST_NAME                EMAIL  GENDER  ...         HOBBIES            ADDRESS    STATE     CITY
-0  Ranjith Kumar  Subramaniam    ranjith@gmail.com    Male  ...   SPORTS, MUSIC  SAIDAPET, CHENNAI  Haryana  Panipat
-1       Karthick  Subramaniam   karthick@gmail.com    Male  ...          SPORTS    GUINDY, CHENNAI  Haryana  Panipat
-2        Saranya     Santhosh  saransant@gmail.com  Female  ...  READING, MUSIC           BANGLORE  Haryana  Panipat
-3      Parthiban     Sankaran  parthiban@gmail.com    Male  ...           MUSIC              SALEM  Haryana  Panipat
-4        Ashwini        Patel     ashpat@gmail.com  Female  ...          RADING            PANIPAT  Haryana  Panipat
-
-[5 rows x 11 columns]
-0    Ranjith Kumar
-1         Karthick
-2          Saranya
-3        Parthiban
-4          Ashwini
-Name: FIRST_NAME, dtype: object
-['FIRST_NAME', 'LAST_NAME', 'EMAIL', 'GENDER', 'MOBILENUM', 'DOB', 'SUBJECTS', 'HOBBIES', 'ADDRESS', 'STATE', 'CITY']
-5
-Ranjith Kumar Subramaniam SPORTS, MUSIC
-Karthick Subramaniam SPORTS
-Saranya Santhosh READING, MUSIC
-Parthiban Sankaran MUSIC
-Ashwini Patel RADING</msg>
 <arg>${file_path}</arg>
-<status status="PASS" start="2024-05-30T22:59:45.406555" elapsed="0.033956"/>
+<status status="NOT RUN" start="2024-05-30T23:14:49.793682" elapsed="0.000000"/>
 </kw>
-<kw name="Close All Browsers" owner="SelLib2" type="TEARDOWN">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-05-30T22:59:45.441348" elapsed="6.525022"/>
+<kw name="close browser" type="TEARDOWN">
+<msg time="2024-05-30T23:14:49.798235" level="FAIL">No keyword with name 'close browser' found.</msg>
+<status status="FAIL" start="2024-05-30T23:14:49.797234" elapsed="0.002015">No keyword with name 'close browser' found.</status>
 </kw>
-<status status="PASS" start="2024-05-30T22:57:03.370330" elapsed="168.598037"/>
+<status status="FAIL" start="2024-05-30T23:14:49.787735" elapsed="0.011514">No keyword with name 'Create Webdriver' found.
+
+Also teardown failed:
+No keyword with name 'close browser' found.</status>
 </test>
 <test id="s1-t4" name="Book Actions in Libraries" line="25">
 <kw name="Add Book into Library DB" owner="API_Page">
 <kw name="Get Payload To Add Book Details" owner="API_Page">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-05-30T22:59:51.979427" level="INFO">&amp;{request_body} = { name=Robotframework | isbn=ADCC09 | aisle=456 | author=Ranjith }</msg>
+<msg time="2024-05-30T23:14:49.805230" level="INFO">&amp;{request_body} = { name=Robotframework | isbn=ADCC09 | aisle=456 | author=Ranjith }</msg>
 <var>&amp;{request_body}</var>
 <arg>name=Robotframework</arg>
 <arg>isbn=ADCC09</arg>
 <arg>aisle=456</arg>
 <arg>author=Ranjith</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-05-30T22:59:51.977429" elapsed="0.001998"/>
+<status status="PASS" start="2024-05-30T23:14:49.804232" elapsed="0.000998"/>
 </kw>
 <return>
 <value>${request_body}</value>
-<status status="PASS" start="2024-05-30T22:59:51.979427" elapsed="0.000000"/>
+<status status="PASS" start="2024-05-30T23:14:49.805230" elapsed="0.000000"/>
 </return>
-<msg time="2024-05-30T22:59:51.980429" level="INFO">${request_body} = {'name': 'Robotframework', 'isbn': 'ADCC09', 'aisle': '456', 'author': 'Ranjith'}</msg>
+<msg time="2024-05-30T23:14:49.806298" level="INFO">${request_body} = {'name': 'Robotframework', 'isbn': 'ADCC09', 'aisle': '456', 'author': 'Ranjith'}</msg>
 <var>${request_body}</var>
-<status status="PASS" start="2024-05-30T22:59:51.976427" elapsed="0.004941"/>
+<status status="PASS" start="2024-05-30T23:14:49.803232" elapsed="0.003066"/>
 </kw>
-<kw name="POST" owner="RequestsLibrary">
-<msg time="2024-05-30T22:59:53.294561" level="INFO">POST Request : url=https://rahulshettyacademy.com/Library/Addbook.php 
- path_url=/Library/Addbook.php 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '81', 'Content-Type': 'application/json'} 
- body=b'{"name": "Robotframework", "isbn": "ADCC09", "aisle": "456", "author": "Ranjith"}' 
- </msg>
-<msg time="2024-05-30T22:59:53.294561" level="INFO">POST Response : url=https://rahulshettyacademy.com/Library/Addbook.php 
- status=200, reason=OK 
- headers={'Date': 'Thu, 30 May 2024 17:29:53 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '45', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'} 
- body={"Msg":"successfully added","ID":"ADCC09456"} 
- </msg>
-<msg time="2024-05-30T22:59:53.295560" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<kw name="POST">
+<msg time="2024-05-30T23:14:49.808308" level="FAIL">No keyword with name 'POST' found.</msg>
 <var>${response}</var>
 <arg>${base_url}${add_book}</arg>
 <arg>json=${request_body}</arg>
 <arg>expected_status=200</arg>
-<doc>Sends a POST request.</doc>
-<status status="PASS" start="2024-05-30T22:59:51.981730" elapsed="1.313830"/>
+<status status="FAIL" start="2024-05-30T23:14:49.808308" elapsed="0.000000">No keyword with name 'POST' found.</status>
 </kw>
 <if>
 <branch type="IF" condition="&quot;${response.json()}[Msg]&quot;==&quot;Book Already Exists&quot;">
@@ -197,138 +146,80 @@ Ashwini Patel RADING</msg>
 <arg>ERROR</arg>
 <arg>console=${True}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-05-30T22:59:53.298561" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-05-30T23:14:49.809307" elapsed="0.000039"/>
 </kw>
-<status status="NOT RUN" start="2024-05-30T22:59:53.295560" elapsed="0.003001"/>
+<status status="NOT RUN" start="2024-05-30T23:14:49.808308" elapsed="0.001038"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-05-30T22:59:53.302558" level="INFO">Post response Message: Successfully added the record with the message: successfully added and the ID: ADCC09456</msg>
 <arg>Post response Message: Successfully added the record with the message: ${response.json()}[Msg] and the ID: ${response.json()}[ID]</arg>
 <arg>console=${True}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-30T22:59:53.299558" elapsed="0.004011"/>
+<status status="NOT RUN" start="2024-05-30T23:14:49.809346" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-05-30T22:59:53.298561" elapsed="0.006013"/>
+<status status="NOT RUN" start="2024-05-30T23:14:49.809346" elapsed="0.000493"/>
 </branch>
-<status status="PASS" start="2024-05-30T22:59:53.295560" elapsed="0.009246"/>
+<status status="NOT RUN" start="2024-05-30T23:14:49.808308" elapsed="0.001531"/>
 </if>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-05-30T22:59:53.306558" level="INFO">${book_id_value} = ADCC09456</msg>
 <arg>${book_id_value}</arg>
 <arg>${response.json()}[ID]</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-05-30T22:59:53.304806" elapsed="0.002761"/>
+<status status="NOT RUN" start="2024-05-30T23:14:49.809839" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-05-30T22:59:51.974430" elapsed="1.333337"/>
+<tag>API</tag>
+<status status="FAIL" start="2024-05-30T23:14:49.803232" elapsed="0.007074">No keyword with name 'POST' found.</status>
 </kw>
 <kw name="Get Book Details By ID" owner="API_Page">
-<kw name="GET" owner="RequestsLibrary">
-<msg time="2024-05-30T22:59:53.851125" level="INFO">GET Request : url=https://rahulshettyacademy.com/Library/GetBook.php?ID=ADCC09456 
- path_url=/Library/GetBook.php?ID=ADCC09456 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2024-05-30T22:59:53.852181" level="INFO">GET Response : url=https://rahulshettyacademy.com/Library/GetBook.php?ID=ADCC09456 
- status=200, reason=OK 
- headers={'Date': 'Thu, 30 May 2024 17:29:53 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '81', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'} 
- body=[{"book_name":"Robotframework","isbn":"ADCC09","aisle":"456","author":"Ranjith"}] 
- </msg>
-<msg time="2024-05-30T22:59:53.852352" level="INFO">${get_response} = &lt;Response [200]&gt;</msg>
-<var>${get_response}</var>
-<arg>${base_url}${get_book_id}</arg>
-<arg>params=ID=${book_id_value}</arg>
-<arg>expected_status=200</arg>
-<doc>Sends a GET request.</doc>
-<status status="PASS" start="2024-05-30T22:59:53.310645" elapsed="0.541707"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-05-30T22:59:53.853175" level="INFO">Get response: [{'book_name': 'Robotframework', 'isbn': 'ADCC09', 'aisle': '456', 'author': 'Ranjith'}]</msg>
-<arg>Get response: ${get_response.json()}</arg>
-<arg>console=${True}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-30T22:59:53.852352" elapsed="0.001816"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-05-30T22:59:53.856169" level="INFO">Book Name: Robotframework</msg>
-<arg>Book Name: ${get_response.json()}[0][book_name]</arg>
-<arg>console=${True}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-30T22:59:53.854949" elapsed="0.001220"/>
-</kw>
-<status status="PASS" start="2024-05-30T22:59:53.309696" elapsed="0.546473"/>
+<tag>API</tag>
+<status status="NOT RUN" start="2024-05-30T23:14:49.810306" elapsed="0.000000"/>
 </kw>
 <kw name="Delete the Book Details" owner="API_Page">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-05-30T22:59:53.859130" level="INFO">&amp;{request_body} = { ID=ADCC09456 }</msg>
-<var>&amp;{request_body}</var>
-<arg>ID=${book_id_value}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-05-30T22:59:53.858124" elapsed="0.001006"/>
+<tag>API</tag>
+<status status="NOT RUN" start="2024-05-30T23:14:49.810306" elapsed="0.000000"/>
 </kw>
-<kw name="POST" owner="RequestsLibrary">
-<msg time="2024-05-30T22:59:55.023689" level="INFO">POST Request : url=https://rahulshettyacademy.com/Library/DeleteBook.php 
- path_url=/Library/DeleteBook.php 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '19', 'Content-Type': 'application/json'} 
- body=b'{"ID": "ADCC09456"}' 
- </msg>
-<msg time="2024-05-30T22:59:55.023862" level="INFO">POST Response : url=https://rahulshettyacademy.com/Library/DeleteBook.php 
- status=200, reason=OK 
- headers={'Date': 'Thu, 30 May 2024 17:29:54 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '38', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'} 
- body={"msg":"book is successfully deleted"} 
- </msg>
-<msg time="2024-05-30T22:59:55.025883" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>${base_url}${delete_book_id}</arg>
-<arg>json=${request_body}</arg>
-<arg>expected_status=200</arg>
-<doc>Sends a POST request.</doc>
-<status status="PASS" start="2024-05-30T22:59:53.859130" elapsed="1.166753"/>
+<kw name="close browser" type="TEARDOWN">
+<msg time="2024-05-30T23:14:49.814313" level="FAIL">No keyword with name 'close browser' found.</msg>
+<status status="FAIL" start="2024-05-30T23:14:49.814313" elapsed="0.000000">No keyword with name 'close browser' found.</status>
 </kw>
-<if>
-<branch type="IF" condition="&quot;${response.json()}[msg]&quot;==&quot;book is successfully deleted&quot;">
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-05-30T22:59:55.030675" level="INFO">Post response Message: book is successfully deleted</msg>
-<arg>Post response Message: ${response.json()}[msg]</arg>
-<arg>console=${True}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-05-30T22:59:55.029678" elapsed="0.002360"/>
-</kw>
-<status status="PASS" start="2024-05-30T22:59:55.027067" elapsed="0.005608"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" owner="BuiltIn">
-<arg>Post response Message: Failed to delete the book, message: ${response.json()}[msg]</arg>
-<arg>ERROR</arg>
-<arg>console=${True}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-05-30T22:59:55.032675" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2024-05-30T22:59:55.032675" elapsed="0.000000"/>
-</branch>
-<status status="PASS" start="2024-05-30T22:59:55.026688" elapsed="0.005987"/>
-</if>
-<status status="PASS" start="2024-05-30T22:59:53.857171" elapsed="1.175504"/>
-</kw>
-<kw name="Close All Browsers" owner="SelLib2" type="TEARDOWN">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-05-30T22:59:55.033807" elapsed="0.000892"/>
-</kw>
-<status status="PASS" start="2024-05-30T22:59:51.972372" elapsed="3.062528"/>
+<status status="FAIL" start="2024-05-30T23:14:49.802250" elapsed="0.012063">No keyword with name 'POST' found.
+
+Also teardown failed:
+No keyword with name 'close browser' found.</status>
 </test>
 <doc>To proatice the selenium with the form in the URL "https://demoqa.com/automation-practice-form"</doc>
-<status status="PASS" start="2024-05-30T22:53:07.835491" elapsed="407.202208"/>
+<status status="FAIL" start="2024-05-30T23:14:48.003967" elapsed="1.812537"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="4" fail="0" skip="0" id="s1" name="TestCase01">TestCase01</stat>
+<stat pass="0" fail="4" skip="0" id="s1" name="TestCase01">TestCase01</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2024-05-30T23:14:48.079481" level="ERROR">Error in file 'C:\Ranjith\Learnings\Projects\RobotProject\Initialize.robot' on line 5: Importing library 'Selenium2Library' failed: ModuleNotFoundError: No module named 'Selenium2Library'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Ranjith\Learnings\Projects\RobotProject
+  C:\Python\python312.zip
+  C:\Python\DLLs
+  C:\Python\Lib
+  C:\Python
+  C:\Python\Lib\site-packages</msg>
+<msg time="2024-05-30T23:14:48.090416" level="ERROR">Error in file 'C:\Ranjith\Learnings\Projects\RobotProject\Initialize.robot' on line 6: Importing library 'RequestsLibrary' failed: ModuleNotFoundError: No module named 'RequestsLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Ranjith\Learnings\Projects\RobotProject
+  C:\Python\python312.zip
+  C:\Python\DLLs
+  C:\Python\Lib
+  C:\Python
+  C:\Python\Lib\site-packages</msg>
 </errors>
 </robot>
