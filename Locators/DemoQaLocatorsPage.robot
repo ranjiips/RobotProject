@@ -2,16 +2,17 @@
 *** Settings ***
 
 *** Variables ***
-${DEMOQA_URL}   https://demoqa.com/automation-practice-form
+
 ${FORM_LABELS}          //label[@class='form-label']
 ${FIRST_NAME_LOCATOR}   //input[@id='firstName']
 ${LAST_NAME_LOCATOR}    //input[@id='lastName']
-${EMAIL}                //input[@id='userEmail']
+${EMAIL_LOCATOR}                //input[@id='userEmail']
+#${GENDER_LOCATOR}       //label[text()='GenderValue']/preceding-sibling::input
 ${GENDER_LOCATOR}       //input[@value='GenderValue']
 ${MOBILENUM_LOCATOR}    //input[@id='userNumber']
 ${DOB_LOCATOR}          //input[@id='dateOfBirthInput']
 #${SUBJECTS_LOCATOR}
-${HOBBIES_LOCATOR}      //label[text()='HobbiesValue']/parent::div//input
+${HOBBIES_LOCATOR}      //label[text()='HobbiesValue']/preceding-sibling::input
 ${ADDRESS_LOCATOR}      //textarea[@id='currentAddress']
 #${STATE_LOCATOR}
 #${CITY_LOCATOR}
