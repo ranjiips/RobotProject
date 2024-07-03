@@ -1,4 +1,5 @@
 @REM pip install selenium==4.21.0
+pip install pip
 pip install robotframework
 pip install robotframework-seleniumlibrary
 pip install robotframework-selenium2library

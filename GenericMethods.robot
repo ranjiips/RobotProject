@@ -46,3 +46,8 @@ Select Radio
     Scroll Element Into View        ${locator}
     Select Radio Button     group_name=${group_name}   value=${input_text}
     log     Selecting the Radio button value: ${input_text}   console=${True}
+
+Clean String
+    [Arguments]     ${string}
+    ${string}   remove string   ${string}   $  ,  '  "  (  )  [  ]  /  -  _
+    [Return]    ${string}

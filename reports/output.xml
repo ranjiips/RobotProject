@@ -1,345 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-06-03T00:45:24.233065" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-06-29T07:21:02.441715" rpa="false" schemaversion="5">
 <suite id="s1" name="TestCase01" source="C:\Ranjith\Learnings\Projects\RobotProject\TestScenarios\TestCase01.robot">
-<test id="s1-t1" name="Enter details in the Tools QA Form" line="22">
+<test id="s1-t1" name="Book Actions in Libraries" line="26">
 <kw name="Test initialize" owner="GenericMethods" type="SETUP">
 <if>
 <branch type="IF" condition="'${clean_report_folder}'=='Y'">
 <kw name="Empty Directory" owner="robot.libraries.OperatingSystem">
-<msg time="2024-06-03T00:45:25.157679" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Ranjith\Learnings\Projects\RobotProject\reports\Screenshots"&gt;C:\Ranjith\Learnings\Projects\RobotProject\reports\Screenshots&lt;/a&gt;'.</msg>
-<msg time="2024-06-03T00:45:25.158680" level="INFO" html="true">Emptied directory '&lt;a href="file://C:\Ranjith\Learnings\Projects\RobotProject\reports\Screenshots"&gt;C:\Ranjith\Learnings\Projects\RobotProject\reports\Screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-06-29T07:21:03.843751" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Ranjith\Learnings\Projects\RobotProject\reports\Screenshots"&gt;C:\Ranjith\Learnings\Projects\RobotProject\reports\Screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-06-29T07:21:03.850716" level="INFO" html="true">Emptied directory '&lt;a href="file://C:\Ranjith\Learnings\Projects\RobotProject\reports\Screenshots"&gt;C:\Ranjith\Learnings\Projects\RobotProject\reports\Screenshots&lt;/a&gt;'.</msg>
 <arg>C:\\Ranjith\\Learnings\\Projects\\RobotProject/./reports/Screenshots</arg>
 <doc>Deletes all the content from the given directory.</doc>
-<status status="PASS" start="2024-06-03T00:45:25.157679" elapsed="0.001001"/>
+<status status="PASS" start="2024-06-29T07:21:03.843751" elapsed="0.007967"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-06-03T00:45:25.158680" level="INFO">Delete Old Screenshots</msg>
+<msg time="2024-06-29T07:21:03.851718" level="INFO">Delete Old Screenshots</msg>
 <arg>Delete Old Screenshots</arg>
 <arg>console=${True}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-06-03T00:45:25.158680" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-29T07:21:03.851718" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-06-03T00:45:25.156809" elapsed="0.001871"/>
+<status status="PASS" start="2024-06-29T07:21:03.842751" elapsed="0.008967"/>
 </branch>
-<status status="PASS" start="2024-06-03T00:45:25.156809" elapsed="0.002871"/>
+<status status="PASS" start="2024-06-29T07:21:03.842751" elapsed="0.008967"/>
 </if>
-<status status="PASS" start="2024-06-03T00:45:25.155678" elapsed="0.004002"/>
+<status status="PASS" start="2024-06-29T07:21:03.841876" elapsed="0.010839"/>
 </kw>
-<kw name="Navigate to the URL" owner="GenericMethods">
-<kw name="Create Webdriver" owner="SelLib">
-<msg time="2024-06-03T00:45:25.160845" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<arg>Chrome</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2024-06-03T00:45:25.160704" elapsed="4.218870"/>
+<kw name="Add Book into Library DB" owner="API_Page">
+<kw name="Get Payload To Add Book Details" owner="API_Page">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-29T07:21:03.853751" level="INFO">&amp;{request_body} = { name=Robotframework | isbn=ADCC09 | aisle=456 | author=Ranjith }</msg>
+<var>&amp;{request_body}</var>
+<arg>name=Robotframework</arg>
+<arg>isbn=ADCC09</arg>
+<arg>aisle=456</arg>
+<arg>author=Ranjith</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-29T07:21:03.853751" elapsed="0.000000"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SelLib">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-06-03T00:45:29.380429" elapsed="0.056120"/>
+<return>
+<value>${request_body}</value>
+<status status="PASS" start="2024-06-29T07:21:03.853751" elapsed="0.000000"/>
+</return>
+<msg time="2024-06-29T07:21:03.853751" level="INFO">${request_body} = {'name': 'Robotframework', 'isbn': 'ADCC09', 'aisle': '456', 'author': 'Ranjith'}</msg>
+<var>${request_body}</var>
+<status status="PASS" start="2024-06-29T07:21:03.853751" elapsed="0.000000"/>
 </kw>
-<kw name="Go To" owner="SelLib">
-<msg time="2024-06-03T00:45:29.436549" level="INFO">Opening url 'https://demoqa.com/automation-practice-form'</msg>
-<arg>${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-06-03T00:45:29.436549" elapsed="18.936677"/>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-06-29T07:21:04.775603" level="INFO">POST Request : url=https://rahulshettyacademy.com/Library/Addbook.php 
+ path_url=/Library/Addbook.php 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '81', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Robotframework", "isbn": "ADCC09", "aisle": "456", "author": "Ranjith"}' 
+ </msg>
+<msg time="2024-06-29T07:21:04.775603" level="INFO">POST Response : url=https://rahulshettyacademy.com/Library/Addbook.php 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 29 Jun 2024 01:51:04 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '45', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'} 
+ body={"Msg":"successfully added","ID":"ADCC09456"} 
+ </msg>
+<msg time="2024-06-29T07:21:04.776704" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${base_url}${add_book}</arg>
+<arg>json=${request_body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-06-29T07:21:03.854750" elapsed="0.921954"/>
 </kw>
-<arg>${DEMOQA_URL}</arg>
-<status status="PASS" start="2024-06-03T00:45:25.159680" elapsed="23.214546"/>
-</kw>
-<kw name="Fill the Practice Form" owner="DemoQaActionsPage">
-<kw name="Get Data Frame" owner="CommonLibraries">
-<msg time="2024-06-03T00:45:48.376235" level="INFO">C:\Ranjith\Learnings\Projects\RobotProject\TestScenarios/../Resources/DemoQAFormData.xlsx</msg>
-<msg time="2024-06-03T00:45:48.830937" level="INFO">${file_content} =    USER_ID     FIRST_NAME    LAST_NAME                EMAIL  ...         HOBBIES            ADDRESS    STATE     CITY
-0     1001  Ranjith Kumar  Subramaniam    ranjith@gmail.com  ...   SPORTS, MUSIC  ...</msg>
-<var>${file_content}</var>
-<arg>${file_path}</arg>
-<arg>PersonDetails</arg>
-<status status="PASS" start="2024-06-03T00:45:48.376235" elapsed="0.454702"/>
-</kw>
-<kw name="Get Record by UserID" owner="CommonLibraries">
-<msg time="2024-06-03T00:45:48.833461" level="INFO">${FIRST_NAME} = Ranjith Kumar</msg>
-<msg time="2024-06-03T00:45:48.833461" level="INFO">${LAST_NAME} = Subramaniam</msg>
-<msg time="2024-06-03T00:45:48.833461" level="INFO">${EMAIL} = ranjith@gmail.com</msg>
-<msg time="2024-06-03T00:45:48.833461" level="INFO">${GENDER} = Male</msg>
-<msg time="2024-06-03T00:45:48.833461" level="INFO">${MOBILENUM} = 9876543210</msg>
-<msg time="2024-06-03T00:45:48.833461" level="INFO">${DOB} = 1990-01-07T00:00:00.000000000</msg>
-<msg time="2024-06-03T00:45:48.833937" level="INFO">${SUBJECTS} = TAMIL, ENGLISH</msg>
-<msg time="2024-06-03T00:45:48.833937" level="INFO">${HOBBIES} = SPORTS, MUSIC</msg>
-<msg time="2024-06-03T00:45:48.833937" level="INFO">${ADDRESS} = SAIDAPET, CHENNAI</msg>
-<msg time="2024-06-03T00:45:48.833937" level="INFO">${STATE} = Haryana</msg>
-<msg time="2024-06-03T00:45:48.833937" level="INFO">${CITY} = Panipat</msg>
-<var>${FIRST_NAME}</var>
-<var>${LAST_NAME}</var>
-<var>${EMAIL}</var>
-<var>${GENDER}</var>
-<var>${MOBILENUM}</var>
-<var>${DOB}</var>
-<var>${SUBJECTS}</var>
-<var>${HOBBIES}</var>
-<var>${ADDRESS}</var>
-<var>${STATE}</var>
-<var>${CITY}</var>
-<arg>${file_content}</arg>
-<status status="PASS" start="2024-06-03T00:45:48.831976" elapsed="0.001961"/>
-</kw>
-<kw name="Enter Text" owner="GenericMethods">
-<kw name="Wait Until Page Contains Element" owner="SelLib">
-<arg>${locator}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-06-03T00:45:48.834976" elapsed="0.014963"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SelLib">
-<arg>${locator}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2024-06-03T00:45:48.849939" elapsed="0.308230"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SelLib">
-<arg>${locator}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-06-03T00:45:49.158169" elapsed="0.023956"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SelLib">
-<arg>${locator}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-06-03T00:45:49.182125" elapsed="0.026004"/>
-</kw>
+<if>
+<branch type="IF" condition="&quot;${response.json()}[Msg]&quot;==&quot;Book Already Exists&quot;">
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-06-03T00:45:49.208129" level="INFO">Entering the value: Ranjith Kumar</msg>
-<arg>Entering the value: ${input_text}</arg>
+<arg>Post response Message: ${response.json()}[Msg] for the ID ${response.json()}[ID]</arg>
+<arg>ERROR</arg>
 <arg>console=${True}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-06-03T00:45:49.208129" elapsed="0.001193"/>
+<status status="NOT RUN" start="2024-06-29T07:21:04.778604" elapsed="0.000000"/>
 </kw>
-<kw name="Input Text" owner="SelLib">
-<msg time="2024-06-03T00:45:49.209322" level="INFO">Typing text 'Ranjith Kumar' into text field '//input[@id='firstName']'.</msg>
-<arg>${locator}</arg>
-<arg>${input_text}</arg>
-<arg>clear=True</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-03T00:45:49.209322" elapsed="0.124804"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SelLib">
-<msg time="2024-06-03T00:45:49.650093" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Screenshots_0001.png"&gt;&lt;img src="Screenshots/Screenshots_0001.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>${OUTPUTDIR}/Screenshots/Screenshots_{index:04}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-06-03T00:45:49.334126" elapsed="0.315967"/>
-</kw>
-<arg>${FIRST_NAME_LOCATOR}</arg>
-<arg>${FIRST_NAME}</arg>
-<status status="PASS" start="2024-06-03T00:45:48.833937" elapsed="0.816156"/>
-</kw>
-<kw name="Enter Text" owner="GenericMethods">
-<kw name="Wait Until Page Contains Element" owner="SelLib">
-<arg>${locator}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-06-03T00:45:49.651147" elapsed="0.010945"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SelLib">
-<arg>${locator}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2024-06-03T00:45:49.663092" elapsed="0.283249"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SelLib">
-<arg>${locator}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-06-03T00:45:49.946341" elapsed="0.020040"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SelLib">
-<arg>${locator}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-06-03T00:45:49.966381" elapsed="0.023999"/>
-</kw>
+<status status="NOT RUN" start="2024-06-29T07:21:04.776704" elapsed="0.001900"/>
+</branch>
+<branch type="ELSE">
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-06-03T00:45:49.990380" level="INFO">Entering the value: Subramaniam</msg>
-<arg>Entering the value: ${input_text}</arg>
+<msg time="2024-06-29T07:21:04.780605" level="INFO">Post response Message: Successfully added the record with the message: successfully added and the ID: ADCC09456</msg>
+<arg>Post response Message: Successfully added the record with the message: ${response.json()}[Msg] and the ID: ${response.json()}[ID]</arg>
 <arg>console=${True}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-06-03T00:45:49.990380" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-29T07:21:04.778604" elapsed="0.003142"/>
 </kw>
-<kw name="Input Text" owner="SelLib">
-<msg time="2024-06-03T00:45:49.991383" level="INFO">Typing text 'Subramaniam' into text field '//input[@id='lastName']'.</msg>
-<arg>${locator}</arg>
-<arg>${input_text}</arg>
-<arg>clear=True</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-03T00:45:49.991383" elapsed="0.125971"/>
+<status status="PASS" start="2024-06-29T07:21:04.778604" elapsed="0.003142"/>
+</branch>
+<status status="PASS" start="2024-06-29T07:21:04.776704" elapsed="0.005042"/>
+</if>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-06-29T07:21:04.783800" level="INFO">${book_id_value} = ADCC09456</msg>
+<arg>${book_id_value}</arg>
+<arg>${response.json()}[ID]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-06-29T07:21:04.782604" elapsed="0.001196"/>
 </kw>
-<kw name="Capture Page Screenshot" owner="SelLib">
-<msg time="2024-06-03T00:45:50.346433" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Screenshots_0002.png"&gt;&lt;img src="Screenshots/Screenshots_0002.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>${OUTPUTDIR}/Screenshots/Screenshots_{index:04}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-06-03T00:45:50.117354" elapsed="0.229079"/>
+<tag>API</tag>
+<status status="PASS" start="2024-06-29T07:21:03.853018" elapsed="0.930782"/>
 </kw>
-<arg>${LAST_NAME_LOCATOR}</arg>
-<arg>${LAST_NAME}</arg>
-<status status="PASS" start="2024-06-03T00:45:49.651147" elapsed="0.695798"/>
-</kw>
-<kw name="Enter Text" owner="GenericMethods">
-<kw name="Wait Until Page Contains Element" owner="SelLib">
-<arg>${locator}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-06-03T00:45:50.347944" elapsed="0.013000"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SelLib">
-<arg>${locator}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2024-06-03T00:45:50.360944" elapsed="0.286919"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SelLib">
-<arg>${locator}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-06-03T00:45:50.647863" elapsed="0.022000"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SelLib">
-<arg>${locator}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-06-03T00:45:50.670874" elapsed="0.026990"/>
+<kw name="Get Book Details By ID" owner="API_Page">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-06-29T07:21:05.407719" level="INFO">GET Request : url=https://rahulshettyacademy.com/Library/GetBook.php?ID=ADCC09456 
+ path_url=/Library/GetBook.php?ID=ADCC09456 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-06-29T07:21:05.407719" level="INFO">GET Response : url=https://rahulshettyacademy.com/Library/GetBook.php?ID=ADCC09456 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 29 Jun 2024 01:51:05 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '81', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'} 
+ body=[{"book_name":"Robotframework","isbn":"ADCC09","aisle":"456","author":"Ranjith"}] 
+ </msg>
+<msg time="2024-06-29T07:21:05.409879" level="INFO">${get_response} = &lt;Response [200]&gt;</msg>
+<var>${get_response}</var>
+<arg>${base_url}${get_book_id}</arg>
+<arg>params=ID=${book_id_value}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-06-29T07:21:04.785600" elapsed="0.624279"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-06-03T00:45:50.698863" level="INFO">Entering the value: ranjith@gmail.com</msg>
-<arg>Entering the value: ${input_text}</arg>
+<msg time="2024-06-29T07:21:05.411865" level="INFO">Get response: [{'book_name': 'Robotframework', 'isbn': 'ADCC09', 'aisle': '456', 'author': 'Ranjith'}]</msg>
+<arg>Get response: ${get_response.json()}</arg>
 <arg>console=${True}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-06-03T00:45:50.697864" elapsed="0.000999"/>
-</kw>
-<kw name="Input Text" owner="SelLib">
-<msg time="2024-06-03T00:45:50.698863" level="INFO">Typing text 'ranjith@gmail.com' into text field '//input[@id='userEmail']'.</msg>
-<arg>${locator}</arg>
-<arg>${input_text}</arg>
-<arg>clear=True</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-03T00:45:50.698863" elapsed="0.132922"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SelLib">
-<msg time="2024-06-03T00:45:51.050878" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Screenshots_0003.png"&gt;&lt;img src="Screenshots/Screenshots_0003.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>${OUTPUTDIR}/Screenshots/Screenshots_{index:04}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-06-03T00:45:50.832787" elapsed="0.218091"/>
-</kw>
-<arg>${EMAIL_LOCATOR}</arg>
-<arg>${EMAIL}</arg>
-<status status="PASS" start="2024-06-03T00:45:50.346945" elapsed="0.703933"/>
-</kw>
-<kw name="Enter Text" owner="GenericMethods">
-<kw name="Wait Until Page Contains Element" owner="SelLib">
-<arg>${locator}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-06-03T00:45:51.052786" elapsed="0.022063"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SelLib">
-<arg>${locator}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2024-06-03T00:45:51.074849" elapsed="0.289646"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SelLib">
-<arg>${locator}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-06-03T00:45:51.364495" elapsed="0.018992"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SelLib">
-<arg>${locator}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-06-03T00:45:51.383487" elapsed="0.034999"/>
+<status status="PASS" start="2024-06-29T07:21:05.409879" elapsed="0.001986"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-06-03T00:45:51.418486" level="INFO">Entering the value: 9876543210</msg>
-<arg>Entering the value: ${input_text}</arg>
+<msg time="2024-06-29T07:21:05.413756" level="INFO">Book Name: Robotframework</msg>
+<arg>Book Name: ${get_response.json()}[0][book_name]</arg>
 <arg>console=${True}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-06-03T00:45:51.418486" elapsed="0.000791"/>
+<status status="PASS" start="2024-06-29T07:21:05.412763" elapsed="0.002011"/>
 </kw>
-<kw name="Input Text" owner="SelLib">
-<msg time="2024-06-03T00:45:51.419487" level="INFO">Typing text '9876543210' into text field '//input[@id='userNumber']'.</msg>
-<arg>${locator}</arg>
-<arg>${input_text}</arg>
-<arg>clear=True</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-03T00:45:51.419487" elapsed="0.114999"/>
+<tag>API</tag>
+<status status="PASS" start="2024-06-29T07:21:04.785600" elapsed="0.629174"/>
 </kw>
-<kw name="Capture Page Screenshot" owner="SelLib">
-<msg time="2024-06-03T00:45:51.791127" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Screenshots_0004.png"&gt;&lt;img src="Screenshots/Screenshots_0004.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>${OUTPUTDIR}/Screenshots/Screenshots_{index:04}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-06-03T00:45:51.534486" elapsed="0.257195"/>
+<kw name="Delete the Book Details" owner="API_Page">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-29T07:21:05.416763" level="INFO">&amp;{request_body} = { ID=ADCC09456 }</msg>
+<var>&amp;{request_body}</var>
+<arg>ID=${book_id_value}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-29T07:21:05.416763" elapsed="0.000000"/>
 </kw>
-<arg>${MOBILENUM_LOCATOR}</arg>
-<arg>${MOBILENUM}</arg>
-<status status="PASS" start="2024-06-03T00:45:51.051795" elapsed="0.739886"/>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-06-29T07:21:06.037762" level="INFO">POST Request : url=https://rahulshettyacademy.com/Library/DeleteBook.php 
+ path_url=/Library/DeleteBook.php 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '19', 'Content-Type': 'application/json'} 
+ body=b'{"ID": "ADCC09456"}' 
+ </msg>
+<msg time="2024-06-29T07:21:06.037762" level="INFO">POST Response : url=https://rahulshettyacademy.com/Library/DeleteBook.php 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 29 Jun 2024 01:51:06 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '38', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'} 
+ body={"msg":"book is successfully deleted"} 
+ </msg>
+<msg time="2024-06-29T07:21:06.037762" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${base_url}${delete_book_id}</arg>
+<arg>json=${request_body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-06-29T07:21:05.417872" elapsed="0.619890"/>
 </kw>
-<kw name="Enter Text" owner="GenericMethods">
-<kw name="Wait Until Page Contains Element" owner="SelLib">
-<arg>${locator}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-06-03T00:45:51.791681" elapsed="0.012000"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SelLib">
-<arg>${locator}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2024-06-03T00:45:51.803681" elapsed="0.274574"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SelLib">
-<arg>${locator}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-06-03T00:45:52.079205" elapsed="0.039917"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SelLib">
-<arg>${locator}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-06-03T00:45:52.119197" elapsed="0.034004"/>
-</kw>
+<if>
+<branch type="IF" condition="&quot;${response.json()}[msg]&quot;==&quot;book is successfully deleted&quot;">
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-06-03T00:45:52.153915" level="INFO">Entering the value: SAIDAPET, CHENNAI</msg>
-<arg>Entering the value: ${input_text}</arg>
+<msg time="2024-06-29T07:21:06.039889" level="INFO">Post response Message: book is successfully deleted</msg>
+<arg>Post response Message: ${response.json()}[msg]</arg>
 <arg>console=${True}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-06-03T00:45:52.153343" elapsed="0.000572"/>
+<status status="PASS" start="2024-06-29T07:21:06.038791" elapsed="0.002001"/>
 </kw>
-<kw name="Input Text" owner="SelLib">
-<msg time="2024-06-03T00:45:52.154899" level="INFO">Typing text 'SAIDAPET, CHENNAI' into text field '//textarea[@id='currentAddress']'.</msg>
-<arg>${locator}</arg>
-<arg>${input_text}</arg>
-<arg>clear=True</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-03T00:45:52.153915" elapsed="0.110509"/>
+<status status="PASS" start="2024-06-29T07:21:06.037762" elapsed="0.003030"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Post response Message: Failed to delete the book, message: ${response.json()}[msg]</arg>
+<arg>ERROR</arg>
+<arg>console=${True}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-06-29T07:21:06.041466" elapsed="0.000000"/>
 </kw>
-<kw name="Capture Page Screenshot" owner="SelLib">
-<msg time="2024-06-03T00:45:52.466365" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/Screenshots_0005.png"&gt;&lt;img src="Screenshots/Screenshots_0005.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>${OUTPUTDIR}/Screenshots/Screenshots_{index:04}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-06-03T00:45:52.264424" elapsed="0.201941"/>
-</kw>
-<arg>${ADDRESS_LOCATOR}</arg>
-<arg>${ADDRESS}</arg>
-<status status="PASS" start="2024-06-03T00:45:51.791681" elapsed="0.675687"/>
-</kw>
-<arg>${file_path}</arg>
-<status status="PASS" start="2024-06-03T00:45:48.375228" elapsed="4.092140"/>
+<status status="NOT RUN" start="2024-06-29T07:21:06.040792" elapsed="0.000674"/>
+</branch>
+<status status="PASS" start="2024-06-29T07:21:06.037762" elapsed="0.004031"/>
+</if>
+<tag>API</tag>
+<status status="PASS" start="2024-06-29T07:21:05.415764" elapsed="0.626029"/>
 </kw>
 <kw name="Test CleanUp" owner="GenericMethods" type="TEARDOWN">
 <kw name="Close Browser" owner="SelLib">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-06-03T00:45:52.467368" elapsed="2.514293"/>
+<status status="PASS" start="2024-06-29T07:21:06.042763" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-06-03T00:45:52.467368" elapsed="2.514293"/>
+<status status="PASS" start="2024-06-29T07:21:06.042763" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-06-03T00:45:25.155678" elapsed="29.826984"/>
+<status status="PASS" start="2024-06-29T07:21:03.841715" elapsed="2.202052"/>
 </test>
 <doc>To proatice the selenium with the form in the URL "https://demoqa.com/automation-practice-form"</doc>
-<status status="PASS" start="2024-06-03T00:45:24.235914" elapsed="30.747747"/>
+<status status="PASS" start="2024-06-29T07:21:02.444717" elapsed="3.600075"/>
 </suite>
 <statistics>
 <total>
@@ -352,5 +210,6 @@
 </suite>
 </statistics>
 <errors>
+<msg time="2024-06-29T07:21:03.837714" level="WARN">Error in file 'C:\Ranjith\Learnings\Projects\RobotProject\GenericMethods.robot' on line 53: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
 </errors>
 </robot>
