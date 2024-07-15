@@ -9,5 +9,8 @@ Bat file to store install the required softwares/Libraries
 Branch protection has been enabled, create new branch and push the changes
 1 approval is requried to merge the code
 
+Branch protection has been enabled, create new branch and push the changes
+1 approval is required to merge the code
+
 Test execution command:
 python -m robot --outputdir=RobotProject/reports RobotProject/TestScenarios/TestCase01.robot
