@@ -9,3 +9,6 @@ pip install robotframework-datadrivercd
 pip install robotframework-pabot
 pip install robotframework-requests
 pip install robotframework-httplibrary
+pip install ddt
+pip install pytest
+pip install selenium
